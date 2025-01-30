@@ -25,17 +25,19 @@ options = [
     "--no-sandbox",
     "--disable-dev-shm-usage",
     '--remote-debugging-port=9222',
-
-    "download.default_directory": ".", # Set download directory
-    "download.prompt_for_download": False,  # Disable download prompts
-    "download.directory_upgrade": True,
-    "safebrowsing.enabled": True,  # Allow safe downloads
 ]
 
 for option in options:
     chrome_options.add_argument(option)
 
-    
+experimental = {
+    "download.default_directory": '.',  # Set download directory
+    "download.prompt_for_download": False,  # Disable download prompts
+    "download.directory_upgrade": True,
+    "safebrowsing.enabled": True,  # Allow safe downloads
+}
+chrome_options.add_experimental_option("prefs", experimental)
+
 driver = webdriver.Chrome(options = chrome_options)
 
 driver.get('https://antetokipona.infinityfreeapp.com/kule/kule.csv')
