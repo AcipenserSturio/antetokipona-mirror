@@ -37,6 +37,7 @@ driver.get('https://antetokipona.infinityfreeapp.com/kule/kule.csv')
 driver.get('https://antetokipona.infinityfreeapp.com/kule/kule.csv?i=1')
 
 print(driver.page_source)
+print(driver.get_cookies())
 with open('./page.txt', 'w') as f:
     f.write(driver.page_source)
 
