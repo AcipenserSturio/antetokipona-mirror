@@ -33,8 +33,8 @@ for option in options:
     
 driver = webdriver.Chrome(options = chrome_options)
 
-driver.get('http://github.com')
-print(driver.title)
-with open('./GitHub_Action_Results.txt', 'w') as f:
-    f.write(f"This was written with a GitHub action {driver.title}")
+driver.get('https://antetokipona.infinityfreeapp.com/kule/kule.csv')
+print(driver.page_source)
+with open('./page.txt', 'w') as f:
+    f.write(driver.page_source)
 
