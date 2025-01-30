@@ -34,10 +34,13 @@ for option in options:
 driver = webdriver.Chrome(options = chrome_options)
 
 driver.get('https://antetokipona.infinityfreeapp.com/kule/kule.csv')
+driver.implicitly_wait(10)
 driver.get('https://antetokipona.infinityfreeapp.com/kule/kule.csv?i=1')
 
 print(driver.page_source)
 print(driver.get_cookies())
+
+driver.implicitly_wait(60)
 with open('./page.txt', 'w') as f:
     f.write(driver.page_source)
 
