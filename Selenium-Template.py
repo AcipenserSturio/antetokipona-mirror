@@ -24,7 +24,12 @@ options = [
     #"--disable-extensions",
     "--no-sandbox",
     "--disable-dev-shm-usage",
-    '--remote-debugging-port=9222'
+    '--remote-debugging-port=9222',
+
+    "download.default_directory": ".", # Set download directory
+    "download.prompt_for_download": False,  # Disable download prompts
+    "download.directory_upgrade": True,
+    "safebrowsing.enabled": True,  # Allow safe downloads
 ]
 
 for option in options:
